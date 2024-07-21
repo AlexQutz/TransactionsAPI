@@ -9,8 +9,7 @@ This project is a Spring Boot REST API application with PostgreSQL database. It 
 - [Running the Application](#running-the-application)
 - [Running Tests](#running-tests)
 - [API Endpoints](#api-endpoints)
-- [Docker Setup](#docker-setup)
-- [License](#license)
+
 
 ## Prerequisites
 
