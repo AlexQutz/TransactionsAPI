@@ -5,15 +5,14 @@ import com.example.transactionsapi.models.Transaction;
 import com.example.transactionsapi.services.AccountService;
 import com.example.transactionsapi.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class AccountController {
+public class TransactionController {
 
     @Autowired
     private AccountService accountService;
@@ -29,5 +28,16 @@ public class AccountController {
     @GetMapping("/transactions")
     public List<Transaction> getAllTransaction(){
         return transactionService.getAllTransactions();
+    }
+
+
+    @PostMapping("/transfer")
+    public ResponseEntity<?> transferMoney(@RequestBody Transaction transaction) {
+        try {
+            Transaction result = transactionService.transferMoney(transaction);
+            return ResponseEntity.ok("Transaction completed!");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }

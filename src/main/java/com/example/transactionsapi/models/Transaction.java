@@ -3,6 +3,8 @@ package com.example.transactionsapi.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.math.BigInteger;
+
 /**
  * Transaction Model.
  */
