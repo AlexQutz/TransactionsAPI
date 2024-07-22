@@ -1,6 +1,3 @@
-# Spring Boot REST API with PostgreSQL
-
-This project is a Spring Boot REST API application with PostgreSQL database. It includes endpoints for managing accounts and transactions, including transferring money between accounts with appropriate validations.
 
 ## Table of Contents
 
